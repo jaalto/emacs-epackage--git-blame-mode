@@ -1,0 +1,36 @@
+Package: git-blame-mode
+Section: extensions
+License: GPL-2+
+Depends: emacs (>= 23)
+Status: stable unmaintained
+Maintainer: Jari Aalto <jari.aalto@cante.net>
+Bugs:
+Upstream: Junio C Hamano <gitster@pobox.com>,
+ David Kågedal (2007) <davidk@lysator.liu.se>
+Upstream-Bugs:
+Vcs-Type: git
+Vcs-Url: git://git.kernel.org/pub/scm/git/git.git
+Vcs-Browser: http://git.kernel.org/cgit/git/git.git/tree/contrib/emacs
+Homepage:
+Wiki: http://www.emacswiki.org/emacs/Git
+Commentary:
+X-Development:
+ Using the official Vcs-Url to retrive *.el file is not necessary the
+ best because it downlads *huge* git source code repository. Better to
+ go through Vcs-Browser and link 'raw'
+ .
+ rm git-blame.el
+ wget -O 'git.el http://git.kernel.org/cgit/git/git.git/plain/contrib/emacs/git-blame.el?id=HEAD'
+Description: Minor mode for incremental Git blame (official Git contrib code)
+ To see which parts of a file has been changed, uer can use call "git
+ blame" from command line. The `M-x git-blame' provides same from from
+ and can be accessed from the status buffer by pressing key `?'
+ (git--status-view-blame).
+ .
+ By turning on `M-x git-blame-mode' while viewing a file, the editor
+ buffer will be updated by setting the background of individual lines
+ to a color that reflects which commit it comes from. And when you move
+ around the buffer, a one-line summary will be shown in the echo area.
+ .
+ This is the official Git interface as distributed with the Git Source code.
+ Note: 2013-06-03 the code hasn't been touched since 2007.
